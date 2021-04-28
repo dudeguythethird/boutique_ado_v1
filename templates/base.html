@@ -1,12 +1,14 @@
+
 {% load static %}
 
 <!doctype html>
 <html lang="en">
   <head>
+
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
     {% block extra_meta %}
@@ -18,7 +20,7 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
-    {% block extracss %}
+    {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
@@ -28,7 +30,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     {% endblock %}
 
-    {% block extrajs %}
+    {% block extra_js %}
     {% endblock %}
 
     <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
@@ -70,7 +72,7 @@
                                     <a href="" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}'" class="dropdown-item">Logout</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -105,12 +107,12 @@
         </div>
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
-            </div>
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+            </div>            
         </div>
     </header>
 
-    {% if messages %}    
+    {% if messages %}
         <div class="message-container"></div>
     {% endif %}
 
@@ -119,9 +121,10 @@
 
     {% block content %}
     {% endblock %}
-    
+
     {% block postloadjs %}
     {% endblock %}
+
     
   </body>
 </html>
