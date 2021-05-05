@@ -4,20 +4,20 @@
         var currentValue = parseInt($(`#id_qty_${itemId}`).val());
         var minusDisabled = currentValue < 2;
         var plusDisabled = currentValue > 98;
-        $(`#decerment-qty_${itemId}`).prop('disabled', minusDisabled);
-        $(`#incerment-qty_${itemId}`).prop('disabled', plusDisabled);
+        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
     }
 
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
-        var itemId = $(allQtyInputs[i]).data('item_id')
+        var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
 
     $('.qty_input').change(function() {
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
-    })
+    });
 
     // Increment Quantity
     $('.increment-qty').click(function(e) {
@@ -37,5 +37,5 @@
         $(closestInput).val(currentValue - 1);
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
-    })
+    });
 </script>
