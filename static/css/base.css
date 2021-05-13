@@ -99,6 +99,8 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+/*----------------------------------------- Bootstrap Toasts*/
+
 .message-container {
     position: fixed;
     top: 72px;
